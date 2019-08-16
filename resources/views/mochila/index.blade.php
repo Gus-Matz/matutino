@@ -1,4 +1,67 @@
-<!DOCTYPE html>
+@extends('layouts.layout')
+@section('content')
+
+<div class="row">
+    <section class="content">
+        <div class="col">
+            <div class="panel panel-default">
+                <div class="panel-body"> 
+                    <div class="jumbotron text-center" style="margin-bottom:0">
+                        <h1>PAGINA PRINCIPAL</h1>
+                        <p>This responsive page!</p> 
+                    </div>
+                    <div class="pull-left"><h3>Lista de Mochilas</h3></div>
+                        <div class="pull-right">
+                            <a href="{{ url('/agregar') }}" class="btn btn-info" >Añadir Libro</a>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="mytable" class="table table-bordred table-striped">
+                            <thead>
+                            <th>Modelo</th>
+                            <th>Marca</th>
+                            <th>Genero</th>
+                            <th>Color</th>
+                            <th>Precio</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                            </thead>
+                            <tbody>
+                            @if($mochilas->count())  
+                            @foreach($mochilas as $mochila)  
+                            <tr>
+                                <td>{{$mochila->modelo}}</td>
+                                <td>{{$mochila->marca}}</td>
+                                <td>{{$mochila->genero}}</td>
+                                <td>{{$mochila->color}}</td>
+                                <td>{{$mochila->precio}}</td>
+                                <td><a class="btn btn-primary btn-xs" href="" ><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td>
+                                <form action="" method="post">
+                                {{csrf_field()}}
+                                <input name="_method" type="hidden" value="DELETE">
+                
+                                <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+                                </td>
+                            </tr>
+                            @endforeach 
+                            @else
+                            <tr>
+                                <td colspan="8">No hay registro !!</td>
+                            </tr>
+                            @endif
+                            </tbody>
+                
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,4 +75,4 @@
 <script src="{{asset('/js/jquery-3.2.1.slim.min.js')}}" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="{{asset('/js/poppers.min.js')}}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-</html>
+</html-->

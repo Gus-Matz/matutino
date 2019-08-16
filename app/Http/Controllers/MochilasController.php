@@ -40,8 +40,8 @@ class MochilasController extends Controller
     {
         //
         $this->validate($request,[ 'modelo'=>'required', 'marca'=>'required', 'genero'=>'required', 'color'=>'required', 'precio'=>'required']);
-        Empleado::create($request->all());
-        return redirect()->to('existencia')->with('success','Registro creado satisfactoriamente');
+        Mochila::create($request->all());
+        return redirect()->to('principal')->with('success','Registro creado satisfactoriamente');
     }
 
     /**
