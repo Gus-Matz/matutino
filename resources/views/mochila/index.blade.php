@@ -1,63 +1,70 @@
 @extends('layouts.layout')
+@section('titulo','LISTA DE MOCHILAS')
 @section('content')
 
 <div class="row">
-    <section class="content">
         <div class="col">
             <div class="panel panel-default">
                 <div class="panel-body"> 
-                    <div class="jumbotron text-center" style="margin-bottom:0">
-                        <h1>PAGINA PRINCIPAL</h1>
-                        <p>This responsive page!</p> 
+                    <div class="pull-right">
+                        <a href="{{ url('/agregar') }}" class="btn btn-info" >Añadir Libro</a>
                     </div>
-                    <div class="pull-left"><h3>Lista de Mochilas</h3></div>
-                        <div class="pull-right">
-                            <a href="{{ url('/agregar') }}" class="btn btn-info" >Añadir Libro</a>
-                        </div>
-                    </div>
-
-                    <div class="table-container">
-                        <table id="mytable" class="table table-bordred table-striped">
-                            <thead>
+                    <div class="table-responsive row">
+                        <table id="mytable" class="table table-bordred table-striped col-12">
+                            <thead class="thead-dark">
                             <th>Modelo</th>
                             <th>Marca</th>
                             <th>Genero</th>
                             <th>Color</th>
                             <th>Precio</th>
+                            <th>Ver</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
                             </thead>
                             <tbody>
-                            @if($mochilas->count())  
-                            @foreach($mochilas as $mochila)  
-                            <tr>
-                                <td>{{$mochila->modelo}}</td>
-                                <td>{{$mochila->marca}}</td>
-                                <td>{{$mochila->genero}}</td>
-                                <td>{{$mochila->color}}</td>
-                                <td>{{$mochila->precio}}</td>
-                                <td><a class="btn btn-primary btn-xs" href="" ><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                <td>
-                                <form action="" method="post">
-                                {{csrf_field()}}
-                                <input name="_method" type="hidden" value="DELETE">
-                
-                                <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
-                            @endforeach 
-                            @else
-                            <tr>
-                                <td colspan="8">No hay registro !!</td>
-                            </tr>
-                            @endif
+                                @if($mochilas->count())  
+                                @foreach($mochilas as $mochila)  
+                                <tr>
+                                    <td>{{$mochila->modelo}}</td>
+                                    <td>{{$mochila->marca}}</td>
+                                    <td>{{$mochila->genero}}</td>
+                                    <td>{{$mochila->color}}</td>
+                                    <td>{{$mochila->precio}}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-xs" href="{{route('mochila.show', $mochila->id)}}">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success btn-xs" href="">
+                                        <i class="far fa-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="" method="post">
+                                        @csrf
+                                        <input name="_method" type="hidden" value="DELETE">
+                        
+                                        <button class="btn btn-danger btn-xs" type="submit">
+                                        <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                @endforeach 
+                                @else
+                                <tr>
+                                    <td colspan="8">No hay registro !!</td>
+                                </tr>
+                                @endif
                             </tbody>
-                
+                            </div>
                         </table>
+                    </div>
                 </div>
+                {{ $mochilas->links() }}
             </div>
         </div>
-    </div>
+    @endsection
 </div>
 
 

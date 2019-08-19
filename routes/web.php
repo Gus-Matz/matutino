@@ -27,3 +27,6 @@ Route::get('/agregar','MochilasController@create');
 
 //toda la informacion que llega a al formulario "alta", pasa al store.
 Route::post('/agregar','MochilasController@store');
+
+//
+Route::get('/mostrar/{id}','MochilasController@show')->name('mochila.show');

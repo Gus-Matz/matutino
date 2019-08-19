@@ -6,21 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 	<link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-	<script src="{{asset('/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('/js/jquery-3.2.1.slim.min.js')}}" ></script>
-    <script src="{{asset('/js/poppers.min.js')}}" ></script>
+	<link rel="stylesheet" href="{{asset('/plugins/fontawesome/css/all.min.css')}}">
+	<style type="text/css">
+		.table {
+			border-top: 2px solid #ccc;
+
+		}
+	</style>
+
 </head>
 <body>
-
-	<div class="container-fluid" style="margin-top: 100px">
-
-		@yield('content')
+	@include('layouts.navbar')
+	<div class="container-fluid" style="margin-top: 70px">
+		<div class="row">
+			<div class="card mx-auto col-sm-12 col-md-8 col-lg-7">
+				<h5 class="card-header">@yield('titulo')</h5>
+				<div class="card-body">
+				@yield('content')
+				</div>
+			</div>
+		</div>
 	</div>
-	<style type="text/css">
-	.table {
-		border-top: 2px solid #ccc;
-
-	}
-</style>
+	
+    <script src="{{asset('/js/jquery-3.2.1.slim.min.js')}}" ></script>
+    <script src="{{asset('/js/popper.min.js')}}" ></script>
+	<script src="{{asset('/js/bootstrap.min.js')}}"></script>
 </body>
 </html>

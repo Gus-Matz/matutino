@@ -53,6 +53,9 @@ class MochilasController extends Controller
     public function show($id)
     {
         //
+        $mochila=Mochila::find($id);
+        //dd($mochila);
+        return view('mochila.show')->with('mochila',$mochila);
     }
 
     /**
