@@ -67,6 +67,8 @@ class MochilasController extends Controller
     public function edit($id)
     {
         //
+        $mochila=Mochila::find($id);
+        return view('mochila.edit')->with('mochila',$mochila);
     }
 
     /**
@@ -78,7 +80,11 @@ class MochilasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //dd($id);
+
+        $this->validate($request,[ 'modelo'=>'required', 'marca'=>'required', 'genero'=>'required', 'color'=>'required', 'precio'=>'required']);
+        Mochila::find($id)->update($request->all());
+        return redirect()->to('principal')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**
@@ -87,8 +93,10 @@ class MochilasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        //dd($request->id);
+        Mochila::find($request->id)->delete();
+        return redirect()->to('principal')->with('success','Registro eliminado satisfactoriamente');
     }
 }

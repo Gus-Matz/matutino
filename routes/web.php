@@ -30,3 +30,12 @@ Route::post('/agregar','MochilasController@store');
 
 //
 Route::get('/mostrar/{id}','MochilasController@show')->name('mochila.show');
+
+//
+Route::get('/editar/{id}','MochilasController@edit')->name('mochila.edit');
+
+//
+Route::post('/editar/{id}','MochilasController@update')->name('mochila.update');
+
+//
+Route::post('/borrar','MochilasController@destroy')->name('mochila.destroy');
