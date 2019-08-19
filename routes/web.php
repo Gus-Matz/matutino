@@ -18,3 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/principal','MochilasController@index');
+
+//miestra la vita del create
+Route::get('/agregar','MochilasController@create');
+
+//toda la informacion que llega a al formulario "alta", pasa al store.
+Route::post('/agregar','MochilasController@store');
+
+//
+Route::get('/mostrar/{id}','MochilasController@show')->name('mochila.show');
