@@ -1,11 +1,13 @@
 @extends('layouts.layout')
+@section('titulo','HOME')
 @section('content')
 
 <div class="row">
-    <section class="content">
-        <div class="jumbotron text-center" style="margin-bottom:0">
-            <h1>PAGINA PRINCIPAL</h1>
-            <p>This responsive page!</p> 
+    <div class="col"><span class="border border-success"></span>
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+            </div>
         </div>
-    </section>
+    </div>
 </div>

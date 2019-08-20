@@ -10,9 +10,9 @@ class Mochila extends Model
     protected $table = 'mochilas';
     protected $fillable = [
         'modelo',
-        'marca',
-        'genero',
-        'color',
+        'marca_id',
+        'genero_id',
+        'color_id',
         'precio'
 	];
 

@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-body"> 
                     <div class="pull-right">
-                        <a href="{{ url('/agregar') }}" class="btn btn-info" >Añadir Libro</a>
+                        <!-- a href="{{ url('/agregar') }}" class="btn btn-info" >Añadir Libro</a -->
                     </div>
                     <div class="table-responsive row">
                         <table id="mytable" class="table table-bordred table-striped col-12">
