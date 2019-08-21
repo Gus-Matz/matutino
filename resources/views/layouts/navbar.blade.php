@@ -9,10 +9,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/agregar') }}">Agregar <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ url('/agregar') }}"><span class="sr-only">(current)</span>
+          <i class="fas fa-plus-circle"></i>
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="{{ url('/principal') }}">
+          <i class="far fa-list-alt"></i>
+        </a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -26,9 +26,9 @@
                                 @foreach($mochilas as $mochila)  
                                 <tr>
                                     <td>{{$mochila->modelo}}</td>
-                                    <td>{{$mochila->marca}}</td>
-                                    <td>{{$mochila->genero}}</td>
-                                    <td>{{$mochila->color}}</td>
+                                    <td>{{$mochila->marca->nombre}}</td>
+                                    <td>{{$mochila->genero->nombre}}</td>
+                                    <td>{{$mochila->color->nombre}}</td>
                                     <td>{{$mochila->precio}}</td>
                                     <td>
                                         <a class="btn btn-primary btn-xs" href="{{route('mochila.show', $mochila->id)}}">

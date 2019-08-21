@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Mochila;
+use App\Genero;
+use App\Marca;
+use App\Color;
 use Illuminate\Http\Request;
 
 class MochilasController extends Controller
@@ -13,9 +16,10 @@ class MochilasController extends Controller
      */
     public function index()
     {
-        //Este metodo manda a llamar al modelo "Empleado" con los datos almacenados en la base de datos
-        // y los guarda en la variable "$empleados" y los ordena de forma descendente
-        $mochilas=Mochila::orderBy('id','ASC')->paginate(3);
+        //Este metodo manda a llamar al modelo "Mochila" con los datos almacenados en la base de datos
+        // y los guarda en la variable "$mochilas" y los ordena de forma descendente
+        $mochilas=Mochila::with(['marca','genero','color'])->orderBy('id','ASC')->paginate(5);
+        //dd($mochilas);
         return view('Mochila.index',compact('mochilas'));
     }
 
@@ -27,7 +31,12 @@ class MochilasController extends Controller
     public function create()
     {
         //muestra el formulario creado diseñado en el index, utilizando el modelo Mochila
-        return view('Mochila.create');
+        $marcas=Marca::orderBy('nombre','ASC')->select('nombre','id')->get();
+        $generos=Genero::orderBy('nombre','ASC')->select('nombre','id')->get();
+        $colores=Color::orderBy('nombre','ASC')->select('nombre','id')->get();
+        //dd($marcas);
+        //dump($generos,$marcas,$colores);
+        return view('Mochila.create')->with('marcas',$marcas)->with('generos',$generos)->with('colores',$colores);
     }
 
     /**
@@ -39,7 +48,7 @@ class MochilasController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,[ 'modelo'=>'required', 'marca'=>'required', 'genero'=>'required', 'color'=>'required', 'precio'=>'required']);
+        $this->validate($request,[ 'modelo'=>'required', 'marca_id'=>'required', 'genero_id'=>'required', 'color_id'=>'required', 'precio'=>'required']);
         Mochila::create($request->all());
         return redirect()->to('principal')->with('success','Registro creado satisfactoriamente');
     }
