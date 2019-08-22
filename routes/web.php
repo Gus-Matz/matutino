@@ -22,9 +22,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/principal','MochilasController@index');
 
-
-    //Route::get('/inicio','MochilasController@inicio');
-
     //miestra la vita del create
     Route::get('/agregar','MochilasController@create');
 
