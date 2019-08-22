@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7A8685;">
-  <a class="navbar-brand" href="{{ url('/principal') }}">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0431B4;">
+  <a class="navbar-brand" href="{{ url('/') }}">
     <i class="fas fa-home"></i>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,10 +15,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/principal') }}">
-          <i class="far fa-list-alt"></i>
+        <i class="fas fa-list-alt"></i>
         </a>
       </li>
-      <li class="nav-item dropdown">
+      <!-- li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
@@ -29,7 +29,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <!-- li class="nav-item">
+      < li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li -->
     </ul>

@@ -76,8 +76,13 @@ class MochilasController extends Controller
     public function edit($id)
     {
         //
+
         $mochila=Mochila::find($id);
-        return view('mochila.edit')->with('mochila',$mochila);
+        
+        $marcas=Marca::orderBy('nombre','ASC')->select('nombre','id')->get();
+        $generos=Genero::orderBy('nombre','ASC')->select('nombre','id')->get();
+        $colores=Color::orderBy('nombre','ASC')->select('nombre','id')->get();
+        return view('mochila.edit')->with('mochila',$mochila)->with('marcas',$marcas)->with('generos',$generos)->with('colores',$colores);
     }
 
     /**
@@ -91,7 +96,7 @@ class MochilasController extends Controller
     {
         //dd($id);
 
-        $this->validate($request,[ 'modelo'=>'required', 'marca'=>'required', 'genero'=>'required', 'color'=>'required', 'precio'=>'required']);
+        $this->validate($request,[ 'modelo'=>'required', 'marca_id'=>'required', 'genero_id'=>'required', 'color_id'=>'required', 'precio'=>'required']);
         Mochila::find($id)->update($request->all());
         return redirect()->to('principal')->with('success','Registro actualizado satisfactoriamente');
     }

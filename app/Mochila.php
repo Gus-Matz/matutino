@@ -35,6 +35,6 @@ class Mochila extends Model
 
     public function getModeloAttribute($value)
     {
-        return "--".$value."--";
+        return $value;
     }
 }

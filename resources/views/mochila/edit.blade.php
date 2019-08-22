@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('titulo','AGREGAR ARTICULO')
+@section('titulo','EDITAR ARTICULO')
 @section('content')
 
 <div class="row">
@@ -34,19 +34,37 @@
 								<div class="col-xs-8 col-sm-12 col-md-6">
 									<div class="form-group">
                                         <label for="marca">Marca:</label>
-										<input type="text" name="marca" id="marca" class="form-control input-sm" value="{{$mochila->marca}}">
+										<select class="form-control" id="marca_id" name="marca_id">
+											<!-- option value="0">Seleccione</option -->
+											@foreach($marcas as $marca)
+											<option value="{{$marca->id}}" {{($mochila->marca_id==$marca->id)? 'selected':''}}>{{$marca->nombre}}</option>
+											@endforeach
+										</select>
+										<!-- input type="text" name="marca" id="marca" class="form-control input-sm" value="{{$mochila->marca}}" -->
 									</div>
 								</div>
                                 <div class="col-xs-8 col-sm-12 col-md-6">
 									<div class="form-group">
                                     <label for="genero">Genero:</label>
-										<input type="text" name="genero" id="genero" class="form-control input-sm" value="{{$mochila->genero}}">
+										<select class="form-control" id="genero_id" name="genero_id">
+											<!-- option value="0">Seleccione</option -->
+											@foreach($generos as $genero)
+											<option value="{{$genero->id}}" {{($mochila->genero_id==$genero->id)? 'selected':''}}>{{$genero->nombre}}</option>
+											@endforeach
+										</select>
+										<!-- input type="text" name="genero" id="genero" class="form-control input-sm" value="{{$mochila->genero}}" -->
 									</div>
 								</div>
                                 <div class="col-xs-8 col-sm-12 col-md-6">
 									<div class="form-group">
                                         <label for="color">Color:</label>
-										<input type="text" name="color" id="color" class="form-control input-sm" value="{{$mochila->color}}">
+										<select class="form-control" id="color_id" name=color_id>
+											<!-- option value="0">Seleccione</option -->
+											@foreach($colores as $color)
+											<option value="{{$color->id}}" {{($mochila->color_id==$color->id)? 'selected':''}}>{{$color->nombre}}</option>
+											@endforeach
+										</select>
+										<!-- input type="text" name="color" id="color" class="form-control input-sm" value="{{$mochila->color}}" -->
 									</div>
 								</div>
                                 <div class="col-xs-8 col-sm-12 col-md-6">

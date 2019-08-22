@@ -60,7 +60,7 @@
 									<label for="color">Color:</label>
 										<select class="form-control" id="color_id" name=color_id>
 											<option value="0">Seleccione</option>
-											@foreach($colores as $color)
+											@foreach($colores as $color) 
 											<option value="{{$color->id}}">{{$color->nombre}}</option>
 											@endforeach
 										</select>
@@ -73,13 +73,16 @@
 										<input type="text" name="precio" id="precio" class="form-control input-sm" placeholder="Precio de la mochila">
 									</div>
 								</div>
-							</div>
+
 
 								<div class="col-xs-12 col-sm-12 col-md-12">
-									<button type="submit" class="btn btn-primary">Guardar</button>
-									<a href="{{ url('/principal') }}" class="btn btn-danger" >Atras</a>
+									<button type="submit" class="btn btn-success">
+										<i class="far fa-save"></i>
+									</button>
+									<a href="{{ url('/principal') }}" class="btn btn-danger" >
+										<i class="fas fa-arrow-circle-left"></i>
+									</a>
 								</div>
-
 							</div>
 						</form>
 				</div>

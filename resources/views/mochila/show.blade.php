@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('titulo','AGREGAR ARTICULO')
+@section('titulo','DETALLES DEL ARTICULO')
 @section('content')
 
 <div class="row">
@@ -18,25 +18,25 @@
 								<div class="col-xs-8 col-sm-12 col-md-6">
 									<div class="form-group">
                                         <label for="marca">Marca:</label>
-										<input type="text" name="marca" id="marca" class="form-control input-sm" value="{{$mochila->marca}}" disabled>
+										<input type="text" name="marca_id" id="marca_id" class="form-control input-sm" value="{{$mochila->marca->nombre}}"  disabled>
 									</div>
 								</div>
                                 <div class="col-xs-8 col-sm-12 col-md-6">
 									<div class="form-group">
                                     <label for="genero">Genero:</label>
-										<input type="text" name="genero" id="genero" class="form-control input-sm" value="{{$mochila->genero}}" disabled>
+										<input type="text" name="genero_id" id="genero_id" class="form-control input-sm" value="{{$mochila->genero->nombre}}" disabled>
 									</div>
 								</div>
                                 <div class="col-xs-8 col-sm-12 col-md-6">
 									<div class="form-group">
                                         <label for="color">Color:</label>
-										<input type="text" name="color" id="color" class="form-control input-sm" value="{{$mochila->color}}" disabled>
+										<input type="text" name="color_id" id="color_id" class="form-control input-sm" value="{{$mochila->color->nombre}}" disabled>
 									</div>
 								</div>
                                 <div class="col-xs-8 col-sm-12 col-md-6">
 									<div class="form-group">
                                     <label for="precio">Precio:</label>
-										<input type="text" name="precio" id="precio" class="form-control input-sm" value="{{$mochila->precio}}" disabled>
+										<input type="text" name="precio_id" id="precio" class="form-control input-sm" value="{{$mochila->precio}}" disabled>
 									</div>
 								</div>
 							</div>
