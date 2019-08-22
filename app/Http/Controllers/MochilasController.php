@@ -113,4 +113,15 @@ class MochilasController extends Controller
         Mochila::find($request->id)->delete();
         return redirect()->to('principal')->with('success','Registro eliminado satisfactoriamente');
     }
+
+    /**
+     * Pagina de inicio
+     * @return \Illuminate\Http\Response
+     */
+
+    public function inicio()
+    {
+        //
+        return view('mochila.home');
+    }
 }

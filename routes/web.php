@@ -17,25 +17,29 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/principal','MochilasController@index');
 
 
-Route::get('/principal','MochilasController@index');
+    //Route::get('/inicio','MochilasController@inicio');
 
-//miestra la vita del create
-Route::get('/agregar','MochilasController@create');
+    //miestra la vita del create
+    Route::get('/agregar','MochilasController@create');
 
-//toda la informacion que llega a al formulario "alta", pasa al store.
-Route::post('/agregar','MochilasController@store');
+    //toda la informacion que llega a al formulario "alta", pasa al store.
+    Route::post('/agregar','MochilasController@store');
 
-//
-Route::get('/mostrar/{id}','MochilasController@show')->name('mochila.show');
+    //
+    Route::get('/mostrar/{id}','MochilasController@show')->name('mochila.show');
 
-//
-Route::get('/editar/{id}','MochilasController@edit')->name('mochila.edit');
+    //
+    Route::get('/editar/{id}','MochilasController@edit')->name('mochila.edit');
 
-//
-Route::post('/editar/{id}','MochilasController@update')->name('mochila.update');
+    //
+    Route::post('/editar/{id}','MochilasController@update')->name('mochila.update');
 
-//
-Route::post('/borrar','MochilasController@destroy')->name('mochila.destroy');
+    //
+    Route::post('/borrar','MochilasController@destroy')->name('mochila.destroy');
+});
