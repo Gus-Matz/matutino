@@ -9,8 +9,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- primera parte de cargas de archivos (CSS) -->
+
+    <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/plugins/fontawesome/css/all.min.css')}}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -33,6 +35,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+
+                    <!-- li class="nav-item active">
+                        <a class="nav-link" href="{{ url('/agregar') }}">
+                        <i class="fas fa-plus-circle"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/principal') }}">
+                        <i class="fas fa-list-alt"></i>
+                        </a>
+                    </li -->
 
                     </ul>
 
@@ -76,5 +89,12 @@
             @yield('content')
         </main>
     </div>
+    <!-- segunda parte de cargas de archivos (JS) -->
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{asset('/js/jquery-3.2.1.slim.min.js')}}" ></script>
+    <script src="{{asset('/js/popper.min.js')}}" ></script>
+	<script src="{{asset('/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('/plugins/fontawesome/js/all.min.js')}}"></script>
 </body>
 </html>
