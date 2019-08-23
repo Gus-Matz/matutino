@@ -50,8 +50,10 @@
                                         </button>
                                     </td>
                                 </tr>
+
                                 @endforeach 
                                 @else
+                                
                                 <tr>
                                     <td colspan="8">No hay registro !!</td>
                                 </tr>
@@ -63,6 +65,11 @@
                 </div>
                 {{ $mochilas->links() }}
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+				<a href="{{ url('/home') }}" class="btn btn-success" >
+					<i class="fas fa-arrow-circle-left"></i>
+				</a>
+			</div>
         </div>
     @endsection
 </div>

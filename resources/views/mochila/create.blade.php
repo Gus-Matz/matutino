@@ -79,7 +79,7 @@
 									<button type="submit" class="btn btn-success">
 										<i class="far fa-save"></i>
 									</button>
-									<a href="{{ url('/principal') }}" class="btn btn-danger" >
+									<a href="{{ url('/home') }}" class="btn btn-danger" >
 										<i class="fas fa-arrow-circle-left"></i>
 									</a>
 								</div>
