@@ -22,7 +22,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/principal','MochilasController@index');
 
-    //miestra la vita del create
+    //miestra la vista del create
     Route::get('/agregar','MochilasController@create');
 
     //toda la informacion que llega a al formulario "alta", pasa al store.
