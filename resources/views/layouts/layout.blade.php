@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Shop-Matz</title>
 
 	<!-- primera parte de cargas de archivos (CSS) -->
 	<link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
@@ -13,7 +13,6 @@
 	<style type="text/css">
 		.table {
 			border-top: 2px solid #ccc;
-
 		}
 	</style>
 

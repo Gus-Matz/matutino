@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
@@ -21,6 +19,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/principal','MochilasController@index');
+
+    Route::get('/punto-de-venta','HomeController@puntoDeVenta')->name('punto.venta');
 
     //miestra la vista del create
     Route::get('/agregar','MochilasController@create');
@@ -39,4 +39,7 @@ Route::middleware(['auth'])->group(function () {
 
     //
     Route::post('/borrar','MochilasController@destroy')->name('mochila.destroy');
+
+    Route::view('/', 'app');
+
 });

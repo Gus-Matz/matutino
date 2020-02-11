@@ -36,7 +36,7 @@ class MochilasController extends Controller
         $colores=Color::orderBy('nombre','ASC')->select('nombre','id')->get();
         //dd($marcas);
         //dump($generos,$marcas,$colores);
-        return view('Mochila.create')->with('marcas',$marcas)->with('generos',$generos)->with('colores',$colores);
+        return view('mochila.create')->with('marcas',$marcas)->with('generos',$generos)->with('colores',$colores);
     }
 
     /**
